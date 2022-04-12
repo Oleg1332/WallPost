@@ -39,9 +39,10 @@ class WallServiceTest {
 
     @Test
     fun update_true() {
+        WallService.clear()
         WallService.add(
             Post(
-            id = 2,
+            id = 11,
             3,
             4,
             5,
@@ -69,7 +70,7 @@ class WallServiceTest {
         )
         WallService.add(
             Post(
-            id = 2,
+            id = 11,
             3,
             4,
             5,
@@ -97,7 +98,7 @@ class WallServiceTest {
         )
         val result = WallService.update(
             Post(
-                id = 1,
+                id = 3,
                 1,
                 2,
                 3,
@@ -124,7 +125,7 @@ class WallServiceTest {
         )
         )
 
-        assertEquals(true, result)
+        assertTrue(result)
     }
 
     @Test
@@ -161,7 +162,7 @@ class WallServiceTest {
         )
         val result = WallService.update(
             Post(
-                id = 2,
+                id = 9,
                 3,
                 4,
                 5,
@@ -187,6 +188,6 @@ class WallServiceTest {
                 Post.Donut(isDonut = true, 1, canPublishFreeCopy = true, "all")
             )
         )
-        assertEquals(false, result)
+        assertFalse(result)
     }
 }

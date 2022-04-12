@@ -1,15 +1,17 @@
 object WallService {
     private var posts = emptyArray<Post>()
-    fun add(post: Post): Post {
+
         var postId = 0
+
+    fun add(post: Post): Post {
         postId += 1
         val post = post.copy(id = postId)
-        posts = arrayOf(post)
+        posts += post
         return posts.last()
     }
 
     fun update(post: Post): Boolean {
-        val postId = post.component1()
+        val postId = post.id
         val post1 = post
         for ((index, post) in posts.withIndex()) {
             if (post.id == postId) {
@@ -44,4 +46,6 @@ object WallService {
     fun clear() {
         posts = emptyArray()
     }
+
+
 }

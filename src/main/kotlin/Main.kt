@@ -77,7 +77,8 @@ val content = Post(
         Post.Views(4),
         Post.Donut(isDonut = false, 1, canPublishFreeCopy = true, "all")
     )
-    WallService.add(content2)
-    WallService.add(content3)
-    print(WallService.update(content))
+//    WallService.add(content2)
+//    WallService.add(content3)
+//    WallService.add(content)
+
 }
