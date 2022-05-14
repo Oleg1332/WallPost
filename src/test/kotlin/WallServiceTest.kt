@@ -70,9 +70,9 @@ class WallServiceTest {
         )
         WallService.add(
             Post(
-            id = 11,
-            3,
-            4,
+            id = 14,
+            1,
+            7,
             5,
             20220324,
             "text2",
