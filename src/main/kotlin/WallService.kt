@@ -1,12 +1,27 @@
 object WallService {
     private var posts = emptyArray<Post>()
 
-        var postId = 0
+    var postId = 0
 
     fun add(post: Post): Post {
         postId += 1
         val post = post.copy(id = postId)
         posts += post
+        if (post.attachments != null) {
+            for (attachment in post.attachments) {
+                when (attachment) {
+                    is AttachmentPhoto -> println("Фото | ${attachment.photo}")
+
+                    is AttachmentDoc -> println(" Документ | ${attachment.doc}")
+
+                    is AttachmentVideo -> println(" Видео | ${attachment.video}")
+
+                    is AttachmentAudio -> println(" Аудио | ${attachment.audio}")
+
+                    is AttachmentNote -> println(" Заметка | ${attachment.note}")
+                }
+            }
+        }
         return posts.last()
     }
 
@@ -31,3 +46,4 @@ object WallService {
 
 
 }
+

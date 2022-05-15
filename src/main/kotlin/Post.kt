@@ -7,7 +7,7 @@ data class Post(
     val text: String,
     val replyOwnerId: Int,
     val replyPostId: Int,
-    val friendsOnly: Boolean,
+    val friendsOnly: Boolean? = null,
     val postType: String,
     val signerId: Int,
     val canPin: Boolean,
@@ -16,13 +16,14 @@ data class Post(
     val isPinned: Boolean,
     val markedAsAds: Boolean,
     val isFavorite: Boolean,
-    val postponedId: Int,
+    val postponedId: Int? = null,
     val comments: Comments,
     val copyright: Copyright,
     val likes: Likes,
     val reposts: Reposts,
     val views: Views,
-    val donut: Donut
+    val donut: Donut,
+    val attachments: List<Attachments>? = null
 ) {
     data class Comments(
         val count: Int,
