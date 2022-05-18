@@ -2,36 +2,36 @@ interface Attachments {
     val type: String
 }
 data class AttachmentPhoto(
-    override val type: String,
+    override val type: String = "photo",
     val photo: Photo
 ) : Attachments
 
 data class AttachmentVideo(
-    override val type: String,
+    override val type: String = "video",
     val video: Video
 ) : Attachments
 
 data class AttachmentAudio(
-    override val type: String,
+    override val type: String = "audio",
     val audio: Audio
 ) : Attachments
 
 data class AttachmentNote(
-    override val type: String,
+    override val type: String = "note",
     val note: Note
 ) : Attachments
 
 data class AttachmentDoc(
-    override val type: String,
+    override val type: String = "doc",
     val doc: Doc
 ) : Attachments
 
 data class Photo(
     val id: Int,
-    val owner_id: Int,
+    val ownerId: Int,
     val date: Int,
-    val album_id: Int,
-    val user_id: Int,
+    val albumId: Int,
+    val userId: Int,
     val text: String,
     val width: Int,
     val height: Int
@@ -39,7 +39,7 @@ data class Photo(
 
 data class Video(
     val id: Int,
-    val owner_id: Int,
+    val ownerId: Int,
     val date: Int,
     val title: String,
     val description: String,
@@ -52,17 +52,17 @@ data class Video(
 
 data class Audio(
     val id: Int,
-    val owner_id: Int,
+    val ownerId: Int,
     val date: Int,
     val artist: String,
     val duration: Int,
-    val album_id: Int,
+    val albumId: Int,
     val noSearch: Boolean
 )
 
 data class Doc(
     val id: Int,
-    val owner_id: Int,
+    val ownerId: Int,
     val date: Int,
     val title: String,
     val size: Int,
@@ -72,7 +72,7 @@ data class Doc(
 
 data class Note(
     val id: Int,
-    val owner_id: Int,
+    val ownerId: Int,
     val date: Int,
     val title: String,
     val text: String,
